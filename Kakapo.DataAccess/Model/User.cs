@@ -33,7 +33,10 @@ namespace Kakapo.DataAccess.Model
             RestSharpConfig restSharp = new RestSharpConfig(apiUrl, Method.GET);
             listOfUser = JsonConvert.DeserializeObject<List<User>>(restSharp.ExcuteRequest());
 
-            return listOfUser;
+            if (restSharp.restResponse.StatusCode == HttpStatusCode.OK)
+                return listOfUser;
+            else
+                return null;
         }
 
         public User GetAnUser(int id)
@@ -43,14 +46,51 @@ namespace Kakapo.DataAccess.Model
             RestSharpConfig restSharp = new RestSharpConfig(apiUrl, Method.GET);
             user = JsonConvert.DeserializeObject<User>(restSharp.ExcuteRequest());
 
-            return user;
+            if (restSharp.restResponse.StatusCode == HttpStatusCode.OK)
+                return user;
+            else
+                return null;
         }
 
-        public void DeleteAnUser(int id)
+        public bool CreateAnUser(User user)
         {
-            throw new NotImplementedException();
+            string apiUrl = "https://jsonplaceholder.typicode.com/users";
+            RestSharpConfig restSharp = new RestSharpConfig(apiUrl, Method.POST);
+            string jsonData = JsonConvert.SerializeObject(user);
+            restSharp.restRequest.AddParameter("application/json; charset=utf-8", jsonData, ParameterType.RequestBody);
+            restSharp.ExcuteRequest();
+
+            if (restSharp.restResponse.StatusCode == HttpStatusCode.Created)
+                return true;
+            else
+                return false;
         }
 
+        public bool UpdateAnUser(User user)
+        {
+            string apiUrl = "https://jsonplaceholder.typicode.com/users";
+            RestSharpConfig restSharp = new RestSharpConfig(apiUrl, Method.PATCH);
+            string jsonData = JsonConvert.SerializeObject(user);
+            restSharp.restRequest.AddParameter("application/json; charset=utf-8", jsonData, ParameterType.RequestBody);
+            restSharp.ExcuteRequest();
+
+            if (restSharp.restResponse.StatusCode == HttpStatusCode.Created)
+                return true;
+            else
+                return false;
+        }
+
+        public bool DeleteAnUser(int id)
+        {
+            string apiUrl = "https://jsonplaceholder.typicode.com/users/" + id;
+            RestSharpConfig restSharp = new RestSharpConfig(apiUrl, Method.DELETE);
+            restSharp.ExcuteRequest();
+
+            if (restSharp.restResponse.StatusCode == HttpStatusCode.OK)
+                return true;
+            else
+                return false;
+        }
         #endregion
     }
 }

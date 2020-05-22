@@ -9,9 +9,9 @@ namespace Kakapo.DataAccess.Config
 {
     public class RestSharpConfig
     {
-        RestClient restClient;
-        RestRequest restRequest;
-        IRestResponse restResponse;
+        public RestClient restClient;
+        public RestRequest restRequest;
+        public IRestResponse restResponse;
 
         public RestSharpConfig(string url, Method requestMethod){
             restClient = new RestClient(url);

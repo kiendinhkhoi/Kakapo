@@ -51,7 +51,98 @@ namespace Kakapo.DataAccess.Model.Tests
             user = user.GetAnUser(100);
 
             // Assert
-            Assert.AreNotEqual(null, user);
+            Assert.AreEqual(null, user);
+        }
+
+        [TestMethod()]
+        public void Test_CreateAnUser()
+        {
+            // Arrange
+            User user = new User();
+            user.name = "Khoi Kien Dinh";
+            user.username = "khoikien";
+            user.email = "matdanhk97@gmail.com";
+            user.phone = "+84113114115";
+            user.website = "https://github.com";
+            user.address = new Address()
+            {
+                street = "Nguyen Van Linh",
+                suite = "Quan 7",
+                city = "Ho Chi Minh",
+                zipcode = "70000",
+            };
+            user.address.geo = new Geo()
+            {
+                lat = "-37.3159",
+                lng = "81.1496",
+            };
+            user.company = new Company()
+            {
+                name = "SCC Vietnam",
+                catchPhrase = "Multi-layered client-server neural-net",
+                bs = "harness real-time e-markets",
+            };
+
+            bool isCreated;
+
+            //Action
+            isCreated = user.CreateAnUser(user);
+
+            // Assert
+            Assert.IsTrue(isCreated);
+        }
+
+        [TestMethod()]
+        public void Test_UpdateAnUser()
+        {
+            // Arrange
+            User user = new User();
+            user.id = 1;
+            user.name = "Khoi Kien Dinh";
+            user.username = "khoikien";
+            user.email = "matdanhk97@gmail.com";
+            user.phone = "+84113114115";
+            user.website = "https://github.com";
+            user.address = new Address()
+            {
+                street = "Nguyen Van Linh",
+                suite = "Quan 7",
+                city = "Ho Chi Minh",
+                zipcode = "70000",
+            };
+            user.address.geo = new Geo()
+            {
+                lat = "-37.3159",
+                lng = "81.1496",
+            };
+            user.company = new Company()
+            {
+                name = "SCC Vietnam",
+                catchPhrase = "Multi-layered client-server neural-net",
+                bs = "harness real-time e-markets",
+            };
+
+            bool isUpdated;
+
+            //Action
+            isUpdated = user.UpdateAnUser(user);
+
+            // Assert
+            Assert.IsTrue(isUpdated);
+        }
+
+        [TestMethod()]
+        public void Test_DeleteAnUser()
+        {
+            // Arrange
+            User user = new User();
+            bool isDeleted;
+
+            //Action
+            isDeleted = user.DeleteAnUser(1);
+
+            // Assert
+            Assert.IsTrue(isDeleted);
         }
     }
 }
