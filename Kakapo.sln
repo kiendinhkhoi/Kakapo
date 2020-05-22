@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kakapo.DataAccess", "Kakapo.DataAccess\Kakapo.DataAccess.csproj", "{CAE03BB1-E091-4745-AFFF-DAD09645CFA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kakapo.DataAccess.Tests", "Kakapo.DataAccess.Tests\Kakapo.DataAccess.Tests.csproj", "{DA8D6AE6-AB25-4716-A13D-368FCE97D29C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests_Kakapo.DataAccess", "Tests_Kakapo.DataAccess\Tests_Kakapo.DataAccess.csproj", "{E3DC47D6-4D74-4CC6-9263-F25EACC62FEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAE03BB1-E091-4745-AFFF-DAD09645CFA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE03BB1-E091-4745-AFFF-DAD09645CFA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE03BB1-E091-4745-AFFF-DAD09645CFA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE03BB1-E091-4745-AFFF-DAD09645CFA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA8D6AE6-AB25-4716-A13D-368FCE97D29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8D6AE6-AB25-4716-A13D-368FCE97D29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8D6AE6-AB25-4716-A13D-368FCE97D29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8D6AE6-AB25-4716-A13D-368FCE97D29C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3DC47D6-4D74-4CC6-9263-F25EACC62FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DC47D6-4D74-4CC6-9263-F25EACC62FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DC47D6-4D74-4CC6-9263-F25EACC62FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DC47D6-4D74-4CC6-9263-F25EACC62FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB4A50E3-4B45-4EB3-A85E-5F5FC18888CF}
+	EndGlobalSection
+EndGlobal
